@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>TGIF</title>
+	<!-- <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="./css/tgif.css">
+</head>
+<body>
+	<div class="container">
+
+		<header class="row">
+			<div class="col">
+				<h1>TGIF Webpage</h1>
+			</div>
+
+			<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+
+				<a class="navbar-brand" href="#">TGIF</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegación">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbar">
+					<ul class="navbar-nav mr-auto">
+						
+						<li class="nav-item">
+							<a class="nav-link" href="./index.html">Home</a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a href="" class="currentPage nav-link dropdown-toggle" id="congressDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Congress 113</a>
+							<div class="dropdown-menu" aria-labelledby="congressDropdown">
+								<a class="dropdown-item" href="./senatePage.html">Senate</a>
+								<a class="currentPage dropdown-item" href="./housePage.html">House</a>
+							</div>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a href="" class="nav-link dropdown-toggle" id="congressDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Attendance</a>
+							<div class="dropdown-menu" aria-labelledby="congressDropdown">
+								<a class="dropdown-item" href="./S_Attendance.html">Senate</a>
+								<a class="dropdown-item" href="./H_Attendance.html">House</a>
+							</div>
+						</li>
+						
+						<li class="nav-item dropdown">
+							<a href="" class="nav-link dropdown-toggle" id="congressDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
+							<div class="dropdown-menu" aria-labelledby="congressDropdown">
+								<a class="dropdown-item" href="./S_PartyLoyalty.html">Senate</a>
+								<a class="dropdown-item" href="./H_PartyLoyalty.html">House</a>
+							</div>
+						</li>
+
+						
+
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<button onclick="topFunction()" id="toTheTopBtn" title="Go to top">
+			<span class="buttonContent"></span>
+		</button>
+
+		<div class="col-12 col-lg-8">
+			<h2>Congressmen</h2>
+            <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+            <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+		</div>
+
+		<div id="filtersBox">
+			<form id="checkboxesForFilter">
+				<div onclick="filterByPartyState()" class="custom-control custom-checkbox">
+					<input name="filterByParty" type="checkbox" id="filterDemocrats" class="custom-control-input">
+					<label class="custom-control-label" for="filterDemocrats">Democrats</label>
+				</div>
+				
+				<div onclick="filterByPartyState()" class="custom-control custom-checkbox">
+					<input name="filterByParty" type="checkbox" id="filterRepublicans" class="custom-control-input">
+					<label class="custom-control-label" for="filterRepublicans">Republicans</label>
+				</div>
+				
+				<div onclick="filterByPartyState()" class="custom-control custom-checkbox">
+					<input name="filterByParty" type="checkbox" id="filterIndependents" class="custom-control-input">
+					<label class="custom-control-label" for="filterIndependents">Independents</label>
+				</div>
+			</form>
+	
+			<form id="dropdownFilterBox">
+				<label for="stateSelection">State</label>
+				<select id="dropdownForFilter" name="stateSelection" onclick="filterByPartyState()">
+					<option value="all">All</option>
+					<option value="AL">AL</option>
+					<option value="AK">AK</option>
+					<option value="AZ">AZ</option>
+					<option value="AR">AR</option>
+					<option value="CA">CA</option>
+					<option value="CO">CO</option>
+					<option value="CT">CT</option>
+					<option value="DE">DE</option>
+					<option value="FL">FL</option>
+					<option value="GA">GA</option>
+					<option value="HI">HI</option>
+					<option value="ID">ID</option>
+					<option value="IL">IL</option>
+					<option value="IN">IN</option>
+					<option value="IA">IA</option>
+					<option value="KS">KS</option>
+					<option value="KY">KY</option>
+					<option value="LA">LA</option>
+					<option value="ME">ME</option>
+					<option value="MD">MD</option>
+					<option value="MA">MA</option>
+					<option value="MI">MI</option>
+					<option value="MN">MN</option>
+					<option value="MS">MS</option>
+					<option value="MO">MO</option>
+					<option value="MT">MT</option>
+					<option value="NE">NE</option>
+					<option value="NV">NV</option>
+					<option value="NH">NH</option>
+					<option value="NJ">NJ</option>
+					<option value="NM">NM</option>
+					<option value="NY">NY</option>
+					<option value="NC">NC</option>
+					<option value="ND">ND</option>
+					<option value="OH">OH</option>
+					<option value="OK">OK</option>
+					<option value="OR">OR</option>
+					<option value="PA">PA</option>
+					<option value="RI">RI</option>
+					<option value="SC">SC</option>
+					<option value="SD">SD</option>
+					<option value="TN">TN</option>
+					<option value="TX">TX</option>
+					<option value="UT">UT</option>
+					<option value="VT">VT</option>
+					<option value="VA">VA</option>
+					<option value="WA">WA</option>
+					<option value="WV">WV</option>
+					<option value="WI">WI</option>
+					<option value="WY">WY</option>
+				</select>
+			</form>
+	
+			<form class="input-group" id="searchBox">
+				<input class="form-control" id="searchMember" type="text" placeholder="Search member...">
+			</form>
+		</div>
+
+		<table class="table table-hover table-responsive-sm" id="membersTable">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Party</th>
+					<th>State</th>
+					<th>Seniority</th>
+					<th>Votes with party</th>
+				</tr>
+			</thead>
+			<tbody id="bodySection"></tbody>
+		</table>
+		<div hidden id="loader">
+			<div class="lines">
+				<div class="line1"><div class="nameLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+			</div>
+			<div class="lines">
+				<div class="line1"><div class="nameLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+			</div>
+			<div class="lines">
+				<div class="line1"><div class="nameLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+				<div class="line2"><div class="otherLine"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<p class="blockquote-footer text-center">© 2016 TGIF | All Rights Reserved</p>
+			<p class="text-center">info@tgif.com</p>
+		</div>
+	</footer>
+	
+	<!-- <script src="./Bootstrap/js/jquery-3.4.1.min.js"></script>
+	<script src="./Bootstrap/js/popper.min.js"></script>
+	<script src="./Bootstrap/js/bootstrap.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+	<script src="./js/congress113Tables.js"></script> 
+	<script src="./js/common.js"></script>
+
+</body>
+</html>

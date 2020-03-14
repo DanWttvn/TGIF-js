@@ -1,0 +1,305 @@
+
+body {
+	padding-top: 80px;	/* para que no me tape el menu */
+	box-sizing: border-box;
+
+} 
+
+body > .container {
+	margin-bottom: 100px;
+}
+
+/* ------- SCROLLBAR ------- */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0,0,0,0.05);
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);  */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,0.15);
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+    border-radius: 10px;
+}
+
+/* ------- MENU ------- */
+
+.dropdown-menu .currentPage {
+	background: #17a2b8;
+	color: #fff !important;
+}
+
+.dropdown-menu a {
+	color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.dropdown-menu a:active {
+	color: white !important;
+}
+
+.currentSection,
+.currentPage {
+	color: black !important;
+}
+
+/*------ FOOTER ------ */
+
+footer {
+	background: #ccc;
+	padding: 10px;
+	padding-top: 20px;
+	margin-top: 20px;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+footer p {
+	margin-bottom: 5px;
+	color: #6c757d;
+	font-size: 80%;
+}
+
+/*------ SPINNER ------ */
+
+#spinner:not([hidden]) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#spinner::after {
+	content: "";
+	width: 80px;
+	height: 80px;
+	border: 6px solid #f3f3f3;
+	border-top: 7px solid #17a2b8; 
+	border-radius: 100%;
+	will-change: transform;
+	animation: spin 1s infinite linear
+}
+  
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/*------ SKELETON LOADER ------ */
+#loader,
+#loaderRanking1, 
+#loaderRanking2,
+#loaderGlance {
+	width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+#loader div:nth-child(1) .nameLine,
+#loaderRanking1 div:nth-child(1) .nameLine,
+#loaderRanking2 div:nth-child(1) .nameLine,
+#loaderGlance div:nth-child(1) .nameLine {
+	width: 80%;
+}
+#loader div:nth-child(2) .nameLine,
+#loaderRanking1 div:nth-child(2) .nameLine,
+#loaderRanking2 div:nth-child(2) .nameLine,
+#loaderGlance div:nth-child(2) .nameLine {
+	width: 60%;
+}
+#loader div:nth-child(3) .nameLine,
+#loaderRanking1 div:nth-child(3) .nameLine,
+#loaderRanking2 div:nth-child(3) .nameLine,
+#loaderGlance div:nth-child(3) .nameLine {
+	widows: 90%;
+}
+
+.lines {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.line1,
+.line2 {
+	height: 24px;
+	margin: 12px;
+	border-radius: 10px;
+}
+
+#loader .line1 {
+	width: 28%;
+}
+
+#loaderRanking1 .line1,
+#loaderRanking2 .line1,
+#loaderGlance .line1 {
+	width: 40%;
+}
+
+.nameLine {
+	height: 100%;
+	border-radius: 10px;
+	animation: pulse 1s infinite ease-in-out;
+}
+
+#loader .line2 {
+	width: 18%;
+}
+#loaderRanking1 .line2,
+#loaderRanking2 .line2,
+#loaderGlance .line2 {
+	width: 30%;
+}
+
+.otherLine {
+	margin: auto;
+	width: 50px;
+	height: 100%;
+	border-radius: 10px;
+	animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+	0% {
+		background: rgba(165, 165, 165, .1);
+	}
+	50% {
+		background: rgba(165, 165, 165, .3);
+	}
+	100% {
+		background: rgba(165, 165, 165, .1);
+	}
+}
+
+/*------ GO UP BUTTON ------ */
+
+#toTheTopBtn {
+	
+	display: none; 
+	position: fixed; /* Fixed/sticky position */
+	bottom: 90px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+
+	z-index: 99; /* Make sure it does not overlap */
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	background-color: #17a2b8; /* Set a background color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: 15px; /* Some padding */
+	border-radius: 50%; /* Rounded corners */
+
+	width: 60px;
+	height: 60px;
+}
+  
+#toTheTopBtn:hover {
+	background-color: #007bff; /* Add a dark-grey background on hover */
+}
+.buttonContent {
+	background: url(../img/topArrow.svg) no-repeat local center;
+	background-size: contain;
+	display: inline-block;
+	height: 23px;
+	width: 23px;
+}
+
+/* ----- TABLES ------ */
+
+td,
+th {
+	text-align: center;
+}
+
+th {
+	width: 18%;
+}
+
+.alignLeft {
+	text-align: left ;
+}
+
+th:first-child {
+	text-align: left !important;
+	width: 28%;
+}
+
+.generalInfoBox,
+.rankingBox {
+	padding: 50px;
+}
+
+
+
+/* ******** ABOUT ******* */
+
+#aboutBox {
+	font-size: 14px;
+	line-height: 1.5;
+}
+  
+#aboutBox .collapse:not(.show) {
+	height: 350px !important;
+	overflow: hidden;
+	
+	display: -webkit-box;
+	-webkit-line-clamp: 0;
+	-webkit-box-orient: vertical;  
+}
+  
+#aboutBox .collapsing {
+	min-height: 350px !important;
+}
+
+#aboutBox a.collapsed:after  {
+	content: '+ Read More';
+}
+
+#aboutBox a:not(.collapsed):after {
+	content: '- Read Less';
+}
+
+#aboutBox {
+	margin-bottom: 100px;
+}
+
+
+/* ******* CONGRESS 113 ******* */
+
+#filtersBox {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 20px;
+}
+
+#checkboxesForFilter {
+	display: flex;
+}
+
+.custom-control {
+	margin-right: 10px;
+}
+
+.input-group {
+	width: auto !important;
+}
+
+label {
+    margin-bottom: 0 !important;
+}
